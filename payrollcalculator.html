@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payroll Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th,
+        td {
+            text-align:left;
+            padding: 8px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        form {
+            margin-bottom: 20px;
+        }
+        
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        input[type=number] {
+            width: 50%;
+            padding: 10px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        
+        label {
+            display: inline-block;
+            width: 25%;
+            text-align: right;
+            padding-right: 10px;
+            vertical-align: top;
+        }
+        
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+        
+        .fadeIn {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <h1>Payroll Management</h1>
+    <form id="payrollForm">
+        <label for="baseSalary">Base Salary:</label>
+        <input type="number" id="baseSalary" name="baseSalary" step="0.01" required>
+        <button type="submit">Calculate</button>
+    </form>
+    <table id="payrollTable">
+        <thead>
+            <tr>
+                <th>Base Salary</th>
+                <th>Bonus</th>
+                <th>Overtime Pay</th>
+                <th>Stock Options</th>
+                <th>Tax Deduction</th>
+                <th>Allowance</th>
+                <th>Leave Encashments</th>
+                <th>Loan/Deductions</th>
+                <th>Total Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script type="text/javascript">
+        const form = document.getElementById("payrollForm");
+const tableBody = document.getElementById("payrollTable").getElementsByTagName("tbody")[0];
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const baseSalary = parseFloat(form.elements["baseSalary"].value);
+    const bonus = baseSalary * 0.1;
+    const overtimePay = baseSalary * 0.05;
+    const stockOptions = baseSalary * 0.02;
+    const taxDeduction = baseSalary * 0.2;
+    const allowance = baseSalary* 0.03;
+    const leaveEncashments = baseSalary * 0.01;
+    const loanOrDeductions = baseSalary * 0.05;
+    const totalSalary = baseSalary + bonus + overtimePay + stockOptions - taxDeduction + allowance + leaveEncashments - loanOrDeductions;
+
+    const row = tableBody.insertRow();
+
+    const baseSalaryCell = row.insertCell();
+    baseSalaryCell.textContent = baseSalary.toFixed(2);
+
+    const bonusCell = row.insertCell();
+    bonusCell.textContent = bonus.toFixed(2);
+
+    const overtimePayCell = row.insertCell();
+    overtimePayCell.textContent = overtimePay.toFixed(2);
+
+    const stockOptionsCell = row.insertCell();
+    stockOptionsCell.textContent = stockOptions.toFixed(2);
+
+    const taxDeductionCell = row.insertCell();
+    taxDeductionCell.textContent = taxDeduction.toFixed(2);
+
+    const allowanceCell = row.insertCell();
+    allowanceCell.textContent = allowance.toFixed(2);
+
+    const leaveEncashmentsCell = row.insertCell();
+    leaveEncashmentsCell.textContent = leaveEncashments.toFixed(2);
+
+    const loanOrDeductionsCell = row.insertCell();
+    loanOrDeductionsCell.textContent = loanOrDeductions.toFixed(2);
+
+    const totalSalaryCell = row.insertCell();
+    totalSalaryCell.textContent = totalSalary.toFixed(2);
+
+    row.classList.add("fadeIn");
+});
+    </script>
+</body>
+</html>

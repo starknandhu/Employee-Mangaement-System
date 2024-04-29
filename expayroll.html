@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Calculation</title>
+</head>
+<body>
+     
+     <script>
+          var GivenCTC = parseFloat(prompt("Enter the CTC given by company"));
+          if (isNaN(GivenCTC)) {
+               alert("Invalid input for CTC. Please enter a valid number.");
+               throw new Error("Invalid input for CTC.");
+          }
+
+          var VariablePay = parseFloat(prompt("Enter the Variable pay amount"));
+          if (isNaN(VariablePay)) {
+               alert("Invalid input for Variable pay. Please enter a valid number.");
+               throw new Error("Invalid input for Variable pay.");
+          }
+
+          remainingCTC -= VariablePay;
+
+          var monthlyCTC = GivenCTC / 12;
+
+          var BasicPercentage = parseFloat(prompt("Enter the BasicSalary Percentage : "));
+          if (isNaN(BasicPercentage)) {
+               alert("Invalid input for Basic Salary Percentage. Please enter a valid number.");
+               throw new Error("Invalid input for Basic Salary Percentage.");
+          }
+
+          var pfPercentage = parseFloat(prompt("Enter the PF percentage"));
+          if (isNaN(pfPercentage)) {
+               alert("Invalid input for PF percentage. Please enter a valid number.");
+               throw new Error("Invalid input for PF percentage.");
+          }
+
+          var hraPercentage = parseFloat(prompt("Enter the HRA percentage"));
+          if (isNaN(hraPercentage)) {
+               alert("Invalid input for HRA percentage. Please enter a valid number.");
+               throw new Error("Invalid input for HRA percentage.");
+          }
+
+          var Ta = parseFloat(prompt("Enter the Transport Allowances"));
+          if (isNaN(Ta)) {
+               alert("Invalid input for Transport Allowances. Please enter a valid number.");
+               throw new Error("Invalid input for Transport Allowances.");
+          }
+
+          var Da = parseFloat(prompt("Enter the Dearness Allowances"));
+          if (isNaN(Da)) {
+               alert("Invalid input for Dearness Allowances. Please enter a valid number.");
+               throw new Error("Invalid input for Dearness Allowances.");
+          }
+
+          var BasicSalary = monthlyCTC * (BasicPercentage / 100);
+          var pf = (pfPercentage / 100) * BasicSalary;
+          var Basic = BasicSalary - pf;
+          var Hra = (hraPercentage / 100) * Basic;
+          var NetSalary = Basic + Hra + Ta + Da;
+
+          alert("The Monthly CTC is : " + monthlyCTC.toFixed(2));
+          alert("The Basic value is : " + Basic.toFixed(2));
+          alert("The PF value is : " + pf.toFixed(2));
+          alert("NetSalary Salary value is : " + NetSalary.toFixed(2));
+     </script>
+</body>
+</html>

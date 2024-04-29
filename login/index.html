@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav>
+    <div class="logo">
+      <p>DevLeaf</p>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Dashboard</a></li>
+      <li>
+        <a href="#">Employee</a>
+        <ul class="sub-menu">
+          <li><a href="payroll.html">Payroll</a></li>
+          <li><a href="attendance.html">Attendance</a></li>
+          <li><a href="#leave">Leave</a></li>
+          <li><a href="#loan-request">Loan Request</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Feedback</a></li>
+      <li><a href="profile.html">Profile</a></li>
+    </ul>
+    <div class="signin-button">
+      <button>Admin</button>
+    </div>
+  </nav>
+
+  <h1>Employee Management System</h1>
+
+  <table id="employeeTable">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Contact Number</th>
+        <th>Email Address</th>
+        <th>Address</th>
+        <th>Date of Hire</th>
+        <th>Designation</th>
+        <th>Employee Status</th>
+        <th>Salary</th>
+        <th style="width: 100px;">Actions</th>
+      </tr>
+    </thead>
+    <tbody id="employeeBody">
+      
+    </tbody>
+  </table>
+
+  <button class="empbutton" id="addEmployee">Add Employee</button>
+
+
+  <div id="employeeModal" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <input type="text" id="firstName" placeholder="First Name">
+      <input type="text" id="lastName" placeholder="Last Name">
+      <input type="text" id="dob" placeholder="Date of Birth (YYYY-MM-DD)">
+      <input type="text" id="gender" placeholder="Gender">
+      <input type="text" id="contactNumber" placeholder="Contact Number">
+      <input type="text" id="email" placeholder="Email Address">
+      <input type="text" id="address" placeholder="Address">
+      <input type="text" id="hireDate" placeholder="Date of Hire (YYYY-MM-DD)">
+      <input type="text" id="designation" placeholder="Designation">
+      <input type="text" id="status" placeholder="Employee Status">
+      <input type="text" id="salary" placeholder="Salary">
+      <div class="savebutton">
+          <button id="saveEmployee">Save</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

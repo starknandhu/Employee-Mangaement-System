@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<style>
+
+		body {
+			background:linear-gradient(45deg,#0860c4,#d64291);
+			background-size: cover;
+			background-position: center;
+			height: 100vh;
+			margin: 0;
+			display: flex;
+			justify-content: center;
+		}
+
+		.container {
+			width: 500px;
+			margin: 0 auto;
+			background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+			padding: 20px;
+			border-radius: 10px;
+			box-shadow: 0 2px 40px rgba(0, 0, 10, 1);
+			margin-top: 200px;
+			height: 500px;
+			backdrop-filter: blur(10px);
+		}
+
+		h1 {
+			text-align: center;
+			font-weight: 700;
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: px;
+		}
+
+		input[type="text"],
+		input[type="password"] {
+			width: 100%;
+			padding: 18px;
+			border: 1px solid black;
+			border-radius: 10px;
+			box-sizing: border-box;
+			margin-bottom: 40px;
+			font-size: 20px;
+			background-color: transparent;
+			box-shadow: 2px 2px 5px;
+		}
+
+		input[type=submit] {
+			width: 100%;
+			padding: 18px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 10px;
+			cursor: pointer;
+			font-size: 18px;
+		}
+
+		input[type=submit]:hover {
+			background-color: #3e8e41;
+			box-shadow: 2px 2px 5px black;
+
+		}
+		
+		.username{
+			margin-top: 40px;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Authentication</h1>
+		<form id="loginForm">
+
+			<label class="username" for="username">Username:</label>
+			<input type="text" id="username" name="username" required>
+			
+			<label class="register_no" for="register_no">Register Number:</label>
+			<input type="text" id="register_no" name="register_no" required>
+
+			<label for="password">Password:</label>
+			<input type="password" id="password" name="password" required>
+
+			<div id="button-container">
+				<input type="submit" value="submit" class="sub" id="submit">
+			</div>
+		</form>
+	</div>
+	<script type="module">
+		// Import the functions you need from the SDKs you need
+		import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+		import { getDatabase, ref, set, get, child } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-database.js";
+	 
+		// Your web app's Firebase configuration
+		const firebaseConfig = {
+			apiKey: "AIzaSyAwefND9wbZWlWbA_4Ru00cz0aM20gTNtM",
+			authDomain: "employee-management-syst-f8b5c.firebaseapp.com",
+			projectId: "employee-management-syst-f8b5c",
+			storageBucket: "employee-management-syst-f8b5c.appspot.com",
+			messagingSenderId: "355966409849",
+			appId: "1:355966409849:web:c57380e058384ce43c08a8"
+		};
+	 
+		// Initialize Firebase
+		const app = initializeApp(firebaseConfig);
+	 
+		const db = getDatabase(app);
+	 
+		document.getElementById('submit').addEventListener('click', function(e){
+		    e.preventDefault();
+	 
+		    // Assuming authentication is successful
+		    const isAuthenticated = true;
+	 
+		    if (isAuthenticated) {
+			   set(ref(db, 'user/' + document.getElementById("username").value), {
+				  username: document.getElementById("username").value,
+				  register_no: document.getElementById("register_no").value,
+				  password: document.getElementById("password").value
+			   });
+	 
+			   alert("Authentication Successful...");
+			   
+			   setTimeout(function() {
+				window.location.href = 'index.html';
+			 }, 2000); 
+		    } else {
+			   alert("Authentication failed. Please try again.");
+		    }
+		});
+	 </script>
+	
+</body>
+</html>
