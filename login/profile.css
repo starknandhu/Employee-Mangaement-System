@@ -45,6 +45,7 @@ body {
    
    .nav-links li a:hover {
      background-color: #3ad531;
+     border-radius: 20px;
    }
    
    .sub-menu {
@@ -93,6 +94,7 @@ body {
 
    .active{
     background-color: #3ad531;
+    border-radius: 20px;
   }
 
    

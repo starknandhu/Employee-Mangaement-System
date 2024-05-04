@@ -1,7 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-
-
 body {
   font-family: "Poppins", sans-serif;
   margin: 0;
@@ -20,9 +18,8 @@ nav {
   font-size: 25px;
   font-family: "Bodoni Moda", serif;
   font-weight: 800;
-  color:#3ad531 ;
+  color: #3ad531;
 }
-
 
 .nav-links {
   display: flex;
@@ -42,12 +39,12 @@ nav {
   padding: 10px 40px;
   color: white;
   text-decoration: none;
-  margin: 0 2px;
+  margin: 0 2px;  
+  border-radius: 20px;
 }
 
 .nav-links li a:hover {
   background-color: #3ad531;
-  margin: 0 2px;
   border-radius: 20px;
 }
 
@@ -96,102 +93,56 @@ nav {
 }
 
 .active{
-     background-color: #3ad531;
-     border-radius: 20px;
+  background-color: #3ad531;
 }
 
-h1{
-  margin-left: 20px;
-  /* margin-top: 2px; */
-}
-
-.heading-part{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.heading-part input[type="text"]{
-  height: 30px;
-  border-radius: 5px;
-  border: 1px solid black;
-  margin: 0 15px;
-}
-
-.heading-input{
-  padding: 15px 5px;
-  margin: 0px 15px;
-  border-radius: 10px;
-  background-color: #333333;
-  color: #fff;
-  box-shadow: 2px 2px 10px #333333;
-  border-color: none;
-  font-size: 15px;
-  font-weight: 600;
+.container{
+  padding: 30px;
+  margin-top: 50px;
+  margin-left: 400px;
+  border-radius: 20px;
+  min-height:300px ;
+  width: 1000px;
+  border: 1px solid #393b3c;
+  background-color: #393b3c;
+  color:aliceblue;
 }
 
 
-.payroll-inside{
-  margin: 0px 15px 15px 15px;
-  height: auto;
-  border-radius: 0px;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-table, th, td {
-  border: 1px solid #ddd;
-}
-
-th, td {
-  padding: 8px;
-  text-align: left;
-  min-width: 60px;
-}
-
-th {
-  background-color: #f2f2f2;
-  font-size: 20px;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 
-tr:hover {
-  background-color: #ddd;
+#leave-list li {
+  animation: fadeIn 0.5s ease forwards;
+  opacity: 0; 
+  margin-bottom: 20px;
 }
 
-td input[type=text]{
-  height: 25px;
+.container h2{
+  color: #3ad531;
+}
+
+.reset{
+  padding: 10px;
   font-size: 16px;
-  border-style: none;
-  background-color: #f2f2f2;
+  border-radius: 10px;
+  font-weight: 600;
+  color: #3ad531;
+  background-color: #373a36;
+  border: 1px solid #3ad531;
 }
 
-#addEmployeeBtn{
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #333333;
-  color: #fff;
-  box-shadow: 2px 2px 10px #333333;
-  border-color: none;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-}
-
-.add-button input[type="text"]{
-  margin-top: 20px;
-  margin-left: 20px;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: #333333;
-  color: #fff;
-  box-shadow: 2px 2px 10px #333333;
-  border-color: none;
-  font-size: 15px;
-  font-weight: 600;
+.reset:hover{
+  background-color: #3ad531;
+  color: #101;
+  border: none;
 }
